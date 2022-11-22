@@ -1,0 +1,329 @@
+%-------------------------
+% Resume in Latex
+% Author : Jitin Nair
+% Based off of: https://github.com/jitinnair1/autoCV
+% License : MIT
+%------------------------
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT DEFINITION
+%----------------------------------------------------------------------------------------
+
+% article class because we want to fully customize the page and not use a cv template
+\documentclass[a4paper,12pt]{article}
+
+%----------------------------------------------------------------------------------------
+%	FONT
+%----------------------------------------------------------------------------------------
+
+% % fontspec allows you to use TTF/OTF fonts directly
+% \usepackage{fontspec}
+% \defaultfontfeatures{Ligatures=TeX}
+
+% % modified for ShareLaTeX use
+% \setmainfont[
+% SmallCapsFont = Fontin-SmallCaps.otf,
+% BoldFont = Fontin-Bold.otf,
+% ItalicFont = Fontin-Italic.otf
+% ]
+% {Fontin.otf}
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES
+%----------------------------------------------------------------------------------------
+\usepackage{url}
+\usepackage{parskip} 	
+
+%other packages for formatting
+\RequirePackage{color}
+\RequirePackage{graphicx}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[scale=0.9]{geometry}
+
+%tabularx environment
+\usepackage{tabularx}
+
+%for lists within experience section
+\usepackage{enumitem}
+
+% centered version of 'X' col. type
+\newcolumntype{C}{>{\centering\arraybackslash}X} 
+
+%to prevent spillover of tabular into next pages
+\usepackage{supertabular}
+\usepackage{tabularx}
+\newlength{\fullcollw}
+\setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
+\usepackage{titlesec}				
+\usepackage{multicol}
+\usepackage{multirow}
+
+%CV Sections inspired by: 
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%Setup hyperref package, and colours for links
+\usepackage[unicode, draft=false]{hyperref}
+\definecolor{linkcolour}{rgb}{0,0,0}
+\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+
+%for social icons
+\usepackage{fontawesome5}
+
+%debug page outer frames
+% \usepackage{showframe}
+
+%----------------------------------------------------------------------------------------
+%	BEGIN DOCUMENT
+%----------------------------------------------------------------------------------------
+\begin{document}
+
+% non-numbered pages
+\pagestyle{empty} 
+
+%----------------------------------------------------------------------------------------
+%	Anqi Xu
+%----------------------------------------------------------------------------------------
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{@{} C @{}}
+\Huge{\textbf{Anqi Xu}} \\[7.5pt]
+\href{https://github.com/anqixxx/}{\raisebox{-0.05\height}\faGithub\ anqixxx} \ $|$ \ 
+\href{https://www.linkedin.com/in/anqixuu/}{\raisebox{-0.05\height}\faLinkedin\ anqixuu} \ $|$ \ 
+\href{https://anqixxx.github.io/}{\raisebox{-0.05\height}\faGlobe \ anqixxx} \ $|$ \ 
+\href{mailto:anqix2002@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ anqix2002@gmail.com} 
+% \ $|$ \ 
+% \href{tel:+000000000000}{\raisebox{-0.05\height}\faMobile \ +00.00.000.000} \\
+\end{tabularx}
+
+%----------------------------------------------------------------------------------------
+%  	ANQI'S RESUME
+%----------------------------------------------------------------------------------------
+
+
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+\textbf{Programming Languages} &  \normalsize{ Java, C\texttt{++} /C, Python, HTML/CSS, Latex}\\
+% \textbf{Tools \& Frameworks}  &  \normalsize{Git, LabView, Flask, KiCAD}\\  
+\textbf{Electrical}  &  \normalsize{KiCAD, Microcontrollers, Soldering, Oscilloscopes}\\  
+\textbf{Mechanical}  &  \normalsize{Onshape, Solidworks, Machining \& Fabrication}\\ 
+\textbf{Languages}  &  \normalsize{English (native), Mandarin (fluent)}\\  
+\end{tabularx}
+
+\section{Technical Experience}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{BC Cancer Research Co-op} & \hfill Jan 2022  - Apr 2022
+ \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Assisted in the development and training of a deep-learning algorithm to segment cell nuclei with up to a 98\% accuracy rate
+        \item[--] Analyzed and delineated over 800 whole-slide histopathology images within MATLAB to further the development of a diagnostic software suite of tools
+          \item[--] Designed and soldered PCBs in KiCAD for multispectral imaging, emphasizing spacial efficiency
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+
+\textbf{UBC Rocket —  Aerostats \& Airframe and Internals} & \hfill  Sept 2020  - May 2022 
+ \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+       \item[--] Created and launched a meteorological balloon to test wind conditions up to 30km high to determine the suitability for rocket launches
+        \item[--] Designed and soldered circuits for electrical components, focusing on lightness and efficiency due to the limited payload capacity of the balloon
+          \item[--] Measured force and pressure within an RCS (Roll Control System) test stand using Labjack and Labview
+          \item[--] Calibrated a strain gauge S-type load cell for up to 30 kg
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+\section{Software Projects}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Machine Learning Parking Agent} - \textit{Python $|$ ROS}& \hfill  2022
+ \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Developed a ROS algorithm for autonomous navigation of a robot to collect license plate information
+        \item[--] Trained CNNs and utilized openCV algorithms for license plate identification, character segmentation, and numerical classification
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Image Editor} - \textit{C\texttt{++}}& \hfill  2022
+ \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Created a linked-list ADT for image manipulation, allowing for efficient rotation, rearrangement, \& reversibility of input image
+        \item[--] Managed dynamic memory whilst efficiently partitioning images
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Treasure Map Cryptography} - \textit{C\texttt{++}}& \hfill  2022
+ \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Used pixel modification and embedding algorithms to create a virtually indistinguishable map that can be decoded to find the treasure located at longest distance to the start
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Wikipedia Web-scraper} - \textit{Java}& \hfill  2021
+ \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Implemented depth-first search and reverse hashmap sorting to determine the shortest path between two Wikipedia pages
+        \item[--] Created a  mediator server to retrieve pages and statistical information regarding requests
+          \item[--] Utilized caching and staleness intervals to minimize network access 
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Email Analyzer} - \textit{Java} & \hfill 2021
+ \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Used graph theory to collect and advanced metrics based on a chain of emails, with filters to specify interactions
+        \item[--] Generated reports on certain users and time frames, as well as compared users based on different types of activity
+          \item[--] Used JUnit and test-driven development for 97\% line coverage
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Plagiarism Detector} - \textit{Java} & \hfill 2021
+ \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Created a document analyzer using Java that parsed through websites or text files to determine sentence and word level metrics, and similarity
+        \item[--] Developed algorithms to perform linguistic analysis using the Google Sentiment Analysis API
+          \item[--] Compared documents and  partitioned them accordingly using similarity metrics
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Portfolio Website} - \textit{HTML/CSS $|$ Flask $|$ Javascript}& \hfill  2021
+ \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Created and designed a website to display experiences, projects, and skills creatively and interactively with HTML, CSS, Python and Flask
+        
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+\section{Electrical Projects}
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Autonomous Treasure Hunting Robot} - \textit{C\texttt{++} $|$ Mechanical Design $|$ Electrical Design}& \hfill  2022
+ \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Manufactured a fully autonomous robot that follows tape, avoids bombs, and uses IR to detect, collect and store treasures within a team of four
+        \item[--] Integrated a control algorithm in C\texttt{++} to communicate with a variety of sensors and motors
+          \item[--] Used Onshape and manufacturing equipment (3D printer, laser cutter, hand-tools) to construct an arm capable of detecting, identifying, and retrieving randomly located idols
+          \item[--] Soldered PCBs for H-Bridges, magnetic detection circuits, reflectance circuits, and limit switches
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Analog-Digital Converter} - \textit{Electrical Design}& \hfill  2021
+ \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Created a circuit to convert an analog voltage into a digital representation via pulse generation that is then outputted into a number displayed by small LEDs
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Circuit Design and Analysis Lab} - \textit{Electrical Design}& \hfill  2021
+ \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[--] Experimentally designed and troubleshot steady-state RC circuits, damped harmonic oscillators, voltage amplifiers, NAND gates, and logic gates made from MOSFET and BJT transistors 
+        \item[--] Determined values for capacitors, frequency responses, time constants, resonant frequency and damping, diodes, switching latency, amplitude responses, and critical operating parameters
+        \item[--] Mathematically modeled results through curve-fitting and waveform function via MATLAB
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+% \begin{tabularx}{\linewidth}{ @{}l r@{} }
+% \textbf{Arduino Robotic Claw} - \textit{C $|$ Mechanical Design} & \hfill 2021
+%  \\[3.75pt]
+% \multicolumn{2}{@{}X@{}}{
+% \begin{minipage}[t]{\linewidth}
+%     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+%         \item[--] Mechanically developed an autonomous claw that senses and picks up objects of various shapes and sizes, ranging from almond to a full pop can
+%         \item[--] Led development of firmware for the functionality of mechanical components of claw using C and the Arduino IDE
+%           \item[--] Prototyped and tested various mechanical iterations to optimize design and precision
+%     \end{itemize}
+%     \end{minipage}
+% }
+% \end{tabularx}
+
+\section{Education}
+\begin{tabularx}{\linewidth}{@{}l X@{}}	 
+\textbf{The University of British Columbia} & \hfill Sept 2020 - May 2025 \\
+Engineering Physics, Bachelor of Applied Science &  \hfill \normalsize GPA: 4.0/4.33 \\
+\end{tabularx}
+
+\section{Hobbies}
+\begin{center}{\linewidth}
+Environmentalism \hfill   Journaling \hfill   Reading \hfill    Cooking   \hfill  Exploring!\\
+\end{center}
+
+\vfill
+\center{\footnotesize References avaliable upon request}
+
+\end{document}
+
+%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%	The MIT License (MIT)
+%
+%	Copyright (c) 2021 Jitin Nair
+%
+%	Permission is hereby granted, free of charge, to any person obtaining a copy
+%	of this software and associated documentation files (the "Software"), to deal
+%	in the Software without restriction, including without limitation the rights
+%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+%	copies of the Software, and to permit persons to whom the Software is
+%	furnished to do so, subject to the following conditions:
+%
+%-----------------------------------------------------------------------------------------------------------------------------------------------%

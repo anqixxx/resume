@@ -62,13 +62,16 @@
 
 %CV Sections inspired by: 
 %http://stefano.italians.nl/archives/26
-\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+%  \newcommand{\raisedrulefill}[2][0ex]{\leaders\hbox{\rule[#1]{1pt}{#2}}\hfill}
+%     \titleformat{\section}{\Large\bfseries}{\thesection.}{0em}{#1\,\raisedrulefill[0.4ex]{2pt}}
+\titleformat{\section}{\large\scshape\raggedright}{}{0em}{} [{\vspace{0cm}\titlerule[1pt]}]
 \titlespacing{\section}{0pt}{10pt}{10pt}
 
 %Setup hyperref package, and colours for links
 \usepackage[unicode, draft=false]{hyperref}
-\definecolor{linkcolour}{rgb}{0,0,0}
-\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\definecolor{blue}{rgb}{.3568627,.53725, .65882}
+\definecolor{black}{rgb}{0,0,0}
+\hypersetup{colorlinks,breaklinks,urlcolor=blue,linkcolor=blue}
 
 %for social icons
 \usepackage{fontawesome5}
@@ -96,10 +99,10 @@
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
 \Huge{\textbf{Anqi Xu}} \\[7.5pt]
-\href{https://github.com/anqixxx/}{\raisebox{-0.05\height}\faGithub\ anqixxx} \ $|$ \ 
-\href{https://www.linkedin.com/in/anqixuu/}{\raisebox{-0.05\height}\faLinkedin\ anqixuu} \ $|$ \ 
-\href{https://anqixxx.github.io/}{\raisebox{-0.05\height}\faGlobe \ anqixxx} \ $|$ \ 
-\href{mailto:anqix2002@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ anqix2002@gmail.com} 
+\faGithub \href{https://github.com/anqixxx/}{\raisebox{-0.05\height}\ anqixxx} \ $|$ \ 
+\faLinkedin \href{https://www.linkedin.com/in/anqixuu/}{\raisebox{-0.05\height} \ anqixuu} \ $|$ \ 
+\faGlobe \href{https://anqixxx.github.io/}{\raisebox{-0.05\height} \ anqixxx} \ $|$ \ 
+\faEnvelope \href{mailto:anqix2002@gmail.com}{\raisebox{-0.05\height} \ anqix2002@gmail.com} 
 % \ $|$ \ 
 % \href{tel:+000000000000}{\raisebox{-0.05\height}\faMobile \ +00.00.000.000} \\
 \end{tabularx}
@@ -107,8 +110,6 @@
 %----------------------------------------------------------------------------------------
 %  	ANQI'S RESUME
 %----------------------------------------------------------------------------------------
-
-
 \section{Skills}
 \begin{tabularx}{\linewidth}{@{}l X@{}}
 \textbf{Programming Languages} &  \normalsize{ Java, C\texttt{++} /C, Python, HTML/CSS, Latex}\\
@@ -251,9 +252,9 @@
 \begin{minipage}[t]{\linewidth}
     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
         \item[--] Manufactured a fully autonomous robot that follows tape, avoids bombs, and uses IR to detect, collect and store treasures within a team of four
-        \item[--] Integrated a control algorithm in C\texttt{++} to communicate with a variety of sensors and motors
-          \item[--] Used Onshape and manufacturing equipment (3D printer, laser cutter, hand-tools) to construct an arm capable of detecting, identifying, and retrieving randomly located idols
-          \item[--] Soldered PCBs for H-Bridges, magnetic detection circuits, reflectance circuits, and limit switches
+        \item[--] Integrated a \href{https://github.com/anqixxx/robotsummer}{\raisebox{-0.05\height}control algorithm} in C\texttt{++} to communicate with a variety of sensors and motors
+         \item[--] Used Onshape and manufacturing equipment (3D printer, laser cutter, hand-tools) to construct an arm capable of detecting, identifying, and retrieving randomly located idols
+         \item[--] Soldered PCBs for H-Bridges, magnetic detection circuits, reflectance circuits, and limit switches
     \end{itemize}
     \end{minipage}
 }
@@ -284,6 +285,7 @@
     \end{minipage}
 }
 \end{tabularx}
+
 % \begin{tabularx}{\linewidth}{ @{}l r@{} }
 % \textbf{Arduino Robotic Claw} - \textit{C $|$ Mechanical Design} & \hfill 2021
 %  \\[3.75pt]
